@@ -10,13 +10,19 @@ body {
   overflow: hidden;
 }
 
-/* HEADER */
+/* 🔥 HEADER FLUTUANTE */
 .header {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100px;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  z-index: 2; /* 🔥 acima do fundo */
 }
 
 .header img {
@@ -31,6 +37,7 @@ body {
   height: 100vh;
   top: 0;
   left: 0;
+
   opacity: 0;
   transform: translateX(100%);
   transition: all 0.4s ease;
@@ -43,13 +50,13 @@ body {
   pointer-events: all;
 }
 
-/* FUNDO MENU */
+/* 🔥 FUNDO MENU */
 .menu-bg {
   position: absolute;
-  top: 100px;
+  top: 0; /* 🔥 começa do topo agora */
   left: 0;
   width: 100%;
-  height: calc(100% - 100px);
+  height: 100%;
 
   background-size: contain;
   background-repeat: no-repeat;
@@ -61,7 +68,9 @@ body {
 
 /* HOME */
 .home-container {
-  height: calc(100% - 100px);
+  height: 100%;
+  padding-top: 120px; /* 🔥 espaço abaixo do header */
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -98,31 +107,29 @@ body {
 .menu-container {
   position: relative;
   z-index: 1;
-  height: calc(100% - 100px);
+
+  height: 100%;
+  padding-top: 120px; /* 🔥 compensa header */
 
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  padding-top: 10px;
 }
 
-/* 🔥 GRID (SEM FLEX 1 AGORA) */
+/* GRID */
 .grid-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
 
-  margin-top: 20px; /* controla altura da grid */
+  margin-top: 10px;
 }
 
-/* GRID */
 .grid {
   display: grid;
   gap: 15px;
 }
 
-/* BOTÕES */
 .grid button {
   width: 120px;
   height: 120px;
@@ -140,21 +147,21 @@ body {
 /* VOLTAR */
 .back {
   position: absolute;
-  top: 10px;
+  top: 110px; /* 🔥 abaixo do header */
   left: 10px;
   background: white;
   border-radius: 50%;
   padding: 8px 12px;
   border: none;
+  z-index: 2;
 }
 
-/* 🔥 BOTÃO MAIS PRÓXIMO */
+/* BOTÃO LIVRO */
 .change-book-wrapper {
   width: 100%;
   display: flex;
   justify-content: center;
-
-  margin-top: 10px; /* 🔥 aproxima da grid */
+  margin-top: 10px;
 }
 
 .change-book {
@@ -170,6 +177,7 @@ body {
 .item-content {
   width: 100%;
   height: 100%;
+
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
