@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Livro Interativo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="home" class="screen active">
+  <div class="header">
+    <img src="assets/header.png">
+  </div>
+
+  <div class="home-container">
+    <div class="covers">
+      <div class="cover" onclick="openSection(1)">
+        <img src="assets/livro1/Capa1.png">
+      </div>
+      <div class="cover" onclick="openSection(2)">
+        <img src="assets/livro2/Capa2.png">
+      </div>
+    </div>
+
+    <p class="home-text">Clique para iniciar.</p>
+  </div>
+</div>
+
+<div id="menu" class="screen">
+
+  <div class="header">
+    <img src="assets/header.png">
+  </div>
+
+  <!-- 🔥 FUNDO DINÂMICO -->
+  <div id="menuBackground" class="menu-bg"></div>
+
+  <div class="menu-container">
+
+    <button class="back" onclick="goHome()">←</button>
+
+    <div class="grid-wrapper">
+      <div class="grid" id="grid"></div>
+    </div>
+
+    <div class="change-book-wrapper">
+      <button class="change-book" onclick="changeBook()">
+        Escolher outro livro
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<div id="itemScreen" class="screen item-screen">
+  <button class="back" onclick="backToMenu()">←</button>
+
+  <div id="itemContent" class="item-content">
+    <button id="action-btn" onclick="handleAction()">Descobrir</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
